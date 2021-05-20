@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxy.dao.ProDao">
+    <resultMap id="BaseResultMap" type="com.wxy.entity.Pro">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="description" jdbcType="VARCHAR" property="description" />
+        <result column="price" jdbcType="REAL" property="price" />
+        <result column="stock" jdbcType="INTEGER" property="stock" />
+        <result column="categoryLevel1Id" jdbcType="INTEGER" property="categoryLevel1Id" />
+        <result column="categoryLevel2Id" jdbcType="INTEGER" property="categoryLevel2Id" />
+        <result column="categoryLevel3Id" jdbcType="INTEGER" property="categoryLevel3Id" />
+        <result column="fileName" jdbcType="VARCHAR" property="fileName" />
+        <result column="isDelete" jdbcType="INTEGER" property="isDelete" />
+    </resultMap>
+    <select id="findById"  resultMap="BaseResultMap">
+       SELECT*from easybuy_product WHERE id=#{id}
+    </select>
+
+    <select id="findAll"  resultMap="BaseResultMap">
+       SELECT*from easybuy_product
+    </select>
+
+</mapper>

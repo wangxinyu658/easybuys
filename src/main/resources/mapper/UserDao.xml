@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxy.dao.UserDao">
+  <resultMap id="BaseResultMap" type="com.wxy.entity.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="loginName" jdbcType="VARCHAR" property="loginName" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="identityCode" jdbcType="VARCHAR" property="identityCode" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+  </resultMap>
+
+  <select id="login"  resultMap="BaseResultMap">
+   select *from easybuy_user where loginName=#{name} and password=#{pwd}
+  </select>
+</mapper>
